@@ -33,7 +33,8 @@ body {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: fill;
+      object-fit: contain;
+      max-width: 100%;
     }
 
     
@@ -425,17 +426,22 @@ body {
 }
 .about-points {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
   margin-top: 15px;
 }
 
 .about-points li {
-  font-size: 18px;
+  display: grid;
+  grid-template-columns: 24px auto;
+  gap: 10px;
+  align-items: start;
+  font-size: 17px;
+  margin-bottom: 14px;
   color: #003f3f;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+}
+.about-points i {
+  font-size: 20px;
+  color: #0a9396;
 }
 .about-icon {
   min-width: 38px;
@@ -466,10 +472,189 @@ body {
 .testimonial-card {
   text-align: left;
 }
+/* FAQ Section */
+.faq-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a9396;
+  margin-bottom: 10px;
+}
+
+.faq-subtext {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-item {
+  background: #f6fefe;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid #c8f1ef;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: #003f3f;
+  font-weight: bold;
+}
+
+.faq-question i {
+  transition: transform 0.3s;
+  color: #0a9396;
+  font-size: 20px;
+}
+
+.faq-answer {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  display: none;
+}
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
 section {
   scroll-margin-top: 90px;
 }
+.mission-vision {
+  background: #e8fffa;
+  padding: 100px 20px;
+}
 
+.mv-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mv-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.mv-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.mv-card h3 {
+  font-size: 30px;
+  color: #0a9396;
+  margin-bottom: 10px;
+}
+
+.mv-card p {
+  color: #003f3f;
+  font-size: 18px;
+  line-height: 1.7;
+}
+/* WHY CHOOSE US SECTION */
+.why-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.why-container h2 {
+  font-size: 42px;
+  color: #0a9396;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.why-subtext {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 50px;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.why-card {
+  background: #f5fffe;
+  padding: 35px 25px;
+  border-radius: 18px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.why-card i {
+  font-size: 42px;
+  color: #0a9396;
+  margin-bottom: 15px;
+}
+
+.why-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #003f3f;
+}
+
+.why-card p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
 @media (max-width: 600px) {
   .hero h2,
   .about-text h2,
@@ -505,8 +690,16 @@ section {
   .footer-social a {
     font-size: 22px;
   }
-  
+  .about-points li {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
 }
+  
 
 
 @media (max-width: 768px) {
@@ -544,6 +737,13 @@ section {
     font-size: 20px;
     color: #003935;
     font-weight: 600;
+  }
+   .mv-card h3 {
+    font-size: 24px;
+  }
+
+  .mv-card p {
+    font-size: 16px;
   }
   .contact-section h2 {
     font-size: 28px;
@@ -584,7 +784,7 @@ section {
     height: 32px;
     font-size: 18px;
   }
-
+  .faq-title { font-size: 32px; }
 }
 
       .hamburger{
@@ -617,6 +817,13 @@ section {
       .wide p {
         font-size: 16px;
       }
+      .why-container h2 {
+    font-size: 32px;
+  }
+
+  .why-card {
+    width: 100%;
+  }
     }
     .reveal { opacity: 0; transform: translateY(18px); 
       transition: opacity .6s ease, transform .6s ease; 
@@ -705,6 +912,30 @@ section {
     <div class="about-image">
       <img src="./images/farm3.jpg" alt="About DevputraIndia">
     </div>
+    <section class="mission-vision reveal" id="mission">
+  <div class="mv-container">
+
+    <div class="mv-card">
+      <div class="mv-icon">🎯</div>
+      <h3>Our Mission</h3>
+      <p>
+        To empower rural communities through digital skills, modern agriculture practices, 
+        and accessible education—building a foundation of growth, dignity, and opportunity.
+      </p>
+    </div>
+
+    <div class="mv-card">
+      <div class="mv-icon">🌱</div>
+      <h3>Our Vision</h3>
+      <p>
+        To create a future where every village is self-reliant, digitally aware, and thriving— 
+        ensuring no one is left behind in the journey toward development.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
   </div>
 </section>
@@ -723,6 +954,35 @@ section {
     </div>
   </section>
   <img src="./images/farm2.jpg" class="full-image">
+<section id="crops" class="cards reveal">
+  <h2 style="text-align:center; color:#0a9396; font-size:36px; margin-bottom:40px;">Special Crops We Promote</h2>
+
+  <div class="card">
+    <h3>Stevia Farming</h3>
+    <p>A natural sweetener crop that gives farmers 4× better profit than traditional sugarcane.</p>
+  </div>
+
+  <div class="card">
+    <h3>Aloe Vera Farming</h3>
+    <p>High-value medicinal plant used in cosmetics and ayurvedic industries.</p>
+  </div>
+
+  <div class="card">
+    <h3>Dragon Fruit Farming</h3>
+    <p>A high-income exotic fruit crop becoming popular across India.</p>
+  </div>
+</section>
+<section id="support" class="wide reveal">
+  <h2>How We Support Villagers</h2>
+  <p>
+    DevputraIndia provides rural communities with training, farm guidance,
+    financial connections, business mentorship and digital awareness so they
+    can become self-dependent and future ready.
+  </p>
+  <button style="margin-top:20px; padding:14px 40px; border-radius:10px; background:#003f3f; color:white; border:none;">
+    Join the Support Program
+  </button>
+</section>
   <section class="wide">
     <h2>A Future Where Every Village Thrives</h2>
     <p>
@@ -731,6 +991,82 @@ section {
     </p>
   </section>
   <img src="./images/farm4.jpg" class="full-image">
+  <section class="why-section reveal">
+  <div class="why-container">
+    <h2>Why Choose DevputraIndia?</h2>
+    <p class="why-subtext">We empower rural communities with trusted guidance and real results.</p>
+
+    <div class="why-cards">
+      <div class="why-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Expert Agricultural Support</h3>
+        <p>We guide farmers with the right methods, tools, and crop planning for long-term success.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-people-arrows"></i>
+        <h3>Community-Centered Approach</h3>
+        <p>Every decision focuses on helping villages grow financially and become more self-dependent.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Future-Ready Growth</h3>
+        <p>Through training and support, we prepare villagers to embrace modern agricultural techniques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="faq" class="faq-section">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <p class="faq-subtext">Find answers to the most common questions.</p>
+
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is Devputra?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Devputra is a platform dedicated to supporting local talent, creativity, and meaningful growth through community-driven initiatives.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How can I participate?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        You can participate by joining our community events, contacting us through the form, or following our updates on social media.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Is Devputra free to join?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Yes, Devputra is free and open for everyone who seeks learning, exploring, and sharing meaningful contributions.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Where can I connect with the team?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        You may contact us through the website contact form or via our official social media platforms.
+      </div>
+    </div>
+
+  </div>
+</section>
+
   <section id="contact" class="contact-section reveal">
   <div class="contact-container">
     <h2>Contact Us</h2>
@@ -835,6 +1171,29 @@ document.querySelectorAll("#navLinks a").forEach(link => {
     navMenu.classList.remove("open");
   });
 });
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("show");
+    }
+  }
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
 </script>
 </body>
 </html>
